@@ -3,6 +3,7 @@ import Footer from "../Components/Elements/Footer/Footer";
 import Button from "../Components/Elements/Button/Index";
 import Slider from "react-slick";
 import React from "react";
+import { Link } from "react-scroll";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from "framer-motion";
@@ -23,7 +24,9 @@ const Homepage = () => {
                     <div className="w-1/2 flex flex-col gap-[30px]"> 
                         <h1 className="text-black text-[40px] font-bold font-['Plus Jakarta Sans'] leading-[44px]">Siapkan Dirimu untuk Karier Impian dengan Persiapan yang Tepat!</h1>
                         <h6 className="text-black text-lg font-normal font-['Plus Jakarta Sans'] leading-snug">Mulai dari CV yang menarik, portfolio yang meyakinkan, hingga latihan interview yang relevan.</h6>
+                        <Link to="Program Kami" smooth={true} duration={500}>
                         <Button classname="h-fit py-1 shadow-[inset_0px_-4px_10px_rgba(0,_0,_0,_0.3)] transition  hover:shadow-[inset_0px_4px_10px_rgba(0,_0,_0,_0.3)] hover:bg-[#fdab7f] w-fit  px-[18px] text-[#fffff0] text-lg bg-[#fb6816] rounded-[15px] justify-center items-center">Gabung Sekarang</Button>
+                        </Link>
                         <div className="flex gap-[8px]">
                             <div className="flex ">
                                 <img src="/src/assets/user1.png" alt="" className="w-[41px] h-[41px] rounded-full z-1 border-2 boredr-[#fffff0]"/>
@@ -64,7 +67,7 @@ const Homepage = () => {
                         <h6 className="text-center line-clamp-4 text-black text-base font-normal font-['Plus Jakarta Sans'] leading-snug">Bangun portfolio yang menonjolkan keahlianmu, membantu recruiter melihat potensimu sebagai fresh graduate.</h6>
                     </div>
                 </div>
-                <div className="flex justify-center mt-[60px] bg-[#4C37EE] items-center gap-[32px] flex-col w-auto h-fit shadow-xl pb-[40px] mx pt-[20px]">
+                <div name="Program Kami" className="flex justify-center mt-[60px] bg-[#4C37EE] items-center gap-[32px] flex-col w-auto h-fit shadow-xl pb-[40px] mx pt-[20px]">
                     <h1 className="text-[#fffff0] text-[32px] font-semibold font-['Plus Jakarta Sans'] underline leading-[38.40px]">Program Kami</h1>
                     <div className="flex mx-[150px] w-[1140px] gap-[20px] items-center justify-center">
                         <div className="flex w-1/2 justify-center items-center">

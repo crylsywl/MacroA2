@@ -18,6 +18,10 @@ import QuizLogika from "./Pages/Soal/QuizLogika"
 import Dashboard from "./PagesAdmin/Dashboard"
 import DataMentor from "./PagesAdmin/Datamentor"
 import DataPeserta from "./PagesAdmin/Datapeserta"
+import DetailContent1 from "./Pages/DetailContent1"
+import DetailContent2 from "./Pages/DetailContent2"
+import DetailContent3 from "./Pages/DetailContent3"
+import YouTubeVideo from "./Pages/youtube"
 
 function App() {
   
@@ -44,6 +48,10 @@ function App() {
             <Route path="/admin" element={<Dashboard />}/>
             <Route path="/datamentor" element={<DataMentor />}/>
             <Route path="/datapeserta" element={<DataPeserta />}/>
+            <Route path="/elearning1/:slug" element={<DetailContent1 />}/>
+            <Route path="/elearning2/:slug" element={<DetailContent2 />}/>
+            <Route path="/elearning3/:slug" element={<DetailContent3 />}/>
+            <Route path="/youtube" element={<YouTubeVideo />}/>
           </Routes>  
         </UserProvider>      
       </BrowserRouter>

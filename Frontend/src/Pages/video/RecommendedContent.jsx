@@ -2,13 +2,13 @@ import React from 'react';
 
 export default function RecommendedContent() {
   return (
-    <div className="max-w-[1190px] mx-auto">
+    <div className="">
         <div className="flex items-center gap-4 mb-6 w-full">
-            <div className="h-[3px] bg-black flex-1 max-w-[200px] ml-[-190px]" />
+            <div className="h-[3px] bg-black w-[150px]" />
             <h2 className="text-2xl font-semibold whitespace-nowrap">Rekomendasi Lainnya</h2>
-            <div className="h-[3px] bg-black flex-1 mr-[-190px]" />
+            <div className="h-[3px] bg-black flex-1" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-[#FFFFF0]">
+        <div className="mx-[150px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-[#FFFFF0]">
         <ContentCard
           title="Effective CV Structure"
           instructor="Siska Larasati"
