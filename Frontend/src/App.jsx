@@ -11,9 +11,9 @@ import VideoLearningPlatform from "./Pages/video/VideoLearningPlatform"
 import PaymentPage from "./Pages/pembayaran/PaymentPage"
 import CourseReviewPage from "./Pages/review-cv/CourseReviewPage"
 import Artikel from "./Pages/Artikel/Artikel"
-import Artikel1 from "./Pages/Artikel/ArtikelBaca1"
-import Artikel2 from "./Pages/Artikel/ArtikelBaca2"
-import Artikel3 from "./Pages/Artikel/ArtikelBaca3"
+// import Artikel1 from "./Pages/Artikel/ArtikelBaca1"
+// import Artikel2 from "./Pages/Artikel/ArtikelBaca2"
+// import Artikel3 from "./Pages/Artikel/ArtikelBaca3"
 import QuizLogika from "./Pages/Soal/QuizLogika"
 import Dashboard from "./PagesAdmin/Dashboard"
 import DataMentor from "./PagesAdmin/Datamentor"
@@ -22,6 +22,7 @@ import DetailContent1 from "./Pages/DetailContent1"
 import DetailContent2 from "./Pages/DetailContent2"
 import DetailContent3 from "./Pages/DetailContent3"
 import YouTubeVideo from "./Pages/youtube"
+import DetailArtikel from "./Pages/Artikel/DetailArtikel"
 
 function App() {
   
@@ -36,9 +37,9 @@ function App() {
             <Route path="/elearning" element={<Elearning />}/>
             <Route path="/mentoring" element={<Mentoring />}/>
             <Route path="/artikel" element={<Artikel />}/>
-            <Route path="/artikelBaca1" element={<Artikel1 />}/>
+            {/* <Route path="/artikelBaca1" element={<Artikel1 />}/>
             <Route path="/artikelBaca2" element={<Artikel2 />}/>
-            <Route path="/artikelBaca3" element={<Artikel3 />}/>
+            <Route path="/artikelBaca3" element={<Artikel3 />}/> */}
             <Route path="/soal" element={ <QuizLogika />}/>
             <Route path="/login" element={<Login />}/>
             <Route path="/register" element={<RegisterForm />}/>
@@ -51,6 +52,7 @@ function App() {
             <Route path="/elearning1/:slug" element={<DetailContent1 />}/>
             <Route path="/elearning2/:slug" element={<DetailContent2 />}/>
             <Route path="/elearning3/:slug" element={<DetailContent3 />}/>
+            <Route path="/detailartikel/:slug" element={<DetailArtikel />}/>
             <Route path="/youtube" element={<YouTubeVideo />}/>
           </Routes>  
         </UserProvider>      

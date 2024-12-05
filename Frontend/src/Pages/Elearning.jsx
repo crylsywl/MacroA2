@@ -36,6 +36,8 @@ const filteredContents = contents.filter((content) =>
 //   setSearchValue(e.target.value)
 // };
 
+console.log(filteredContents)
+
 const handleInputChange = (e) => {
   setSearchQuery(e.target.value);
   setSearchValue(e.target.value);
@@ -75,26 +77,26 @@ const handleInputChange = (e) => {
         </div>
       </div>
       <div className='w-full px-[150px] mb-[32px]'>
-                    <div className="grow shrink basis-0 shadow-xl rounded-full self-stretch p-1 justify-start bg-[#f9f9f9] items-center flex">
-                        <div className='items-center rounded-tl-full rounded-bl-full pl-[10px] p-1 bg-[#f9f9f9] flex'>
-                        <img src="/src/assets/menu.svg" className="w-10 h-10 flex-col bg-[#f9f9f9] justify-center items-center gap-2.5 inline-flex"/>
-                        </div>
-                        <div className="grow shrink basis-0 self-stretch bg-[#f9f9f9] justify-start items-center gap-2.5 flex">
-                            <input
-                                type="text"
-                                name="search"
-                                id="search-bar"
-                                value={searchValue}
-                                onChange={handleInputChange}
-                                placeholder='Hinted search text...'  
-                                className="text-[#49454f] text-sm font-bold font-['Plus Jakarta Sans'] border-black px-[20px] leading-[19px] tracking-tight h-[30px] w-full bg-[#f9f9f9]"/>
-                                
-                        </div>
-                        <div className="justify-end items-center rounded-tr-full pr-[10px] rounded-br-full p-2 bg-[#f9f9f9] flex">
-                            <img src="/src/assets/search.svg" className="w-8 h-8  flex-col bg-[#f9f9f9] justify-center items-center gap-2.5 inline-flex"/>
-                        </div>
-                    </div>
-                </div>
+          <div className="grow shrink basis-0 shadow-xl rounded-full self-stretch p-1 justify-start bg-[#f9f9f9] items-center flex">
+              <div className='items-center rounded-tl-full rounded-bl-full pl-[10px] p-1 bg-[#f9f9f9] flex'>
+              <img src="/src/assets/menu.svg" className="w-10 h-10 flex-col bg-[#f9f9f9] justify-center items-center gap-2.5 inline-flex"/>
+              </div>
+              <div className="grow shrink basis-0 self-stretch bg-[#f9f9f9] justify-start items-center gap-2.5 flex">
+                  <input
+                      type="text"
+                      name="search"
+                      id="search-bar"
+                      value={searchValue}
+                      onChange={handleInputChange}
+                      placeholder='Hinted search text...'  
+                      className="text-[#49454f] text-sm font-bold font-['Plus Jakarta Sans'] border-black px-[20px] leading-[19px] tracking-tight h-[30px] w-full bg-[#f9f9f9]"/>
+                      
+              </div>
+              <div className="justify-end items-center rounded-tr-full pr-[10px] rounded-br-full p-2 bg-[#f9f9f9] flex">
+                  <img src="/src/assets/search.svg" className="w-8 h-8  flex-col bg-[#f9f9f9] justify-center items-center gap-2.5 inline-flex"/>
+              </div>
+          </div>
+      </div>
       <div className="flex justify-center items-center mb-[32px]">
           <RadioButton options={RadioButtonOpts} defaultValue={'all'} onChange={(value) => setFilterValue(value)}/>
       </div>

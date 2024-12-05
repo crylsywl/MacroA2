@@ -1,20 +1,44 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../Components/Elements/Navbar/Navbar';
-import RecommendedContent from './video/RecommendedContent';
+import ContentList from '../Components/Fragments/ContentList/ContentList';
 import getAllContent from '../Service/getAllContent';
 import { Link, useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 
 const DetailContent1 = (  ) => {
-  
+    const [contents, setContents] = useState([]);
     const {slug} = useParams()
     const [content, setContent] = useState()
 
-  useEffect(() => {
-    const allContents = getAllContent()
-    const content = allContents.find(content => content.slug === slug)
-    setContent(content)
-  },[])
+    useEffect(() => {
+      const allContents = getAllContent();
+      const selectedContent = allContents.find(content => content.slug === slug);
+    
+      if (selectedContent) {
+        // Filter konten dari kategori yang sama, exclude slug terpilih
+        const sameCategoryContents = allContents.filter(
+          content => content.Categori === selectedContent.Categori && content.slug !== slug
+        );
+    
+        // Jika kategori yang sama kurang dari 4, tambahkan konten acak dari kategori lain
+        let otherCategoryContents = allContents.filter(
+          content => content.Categori !== selectedContent.Categori
+        );
+    
+        // Shuffle konten dari kategori lain secara random
+        otherCategoryContents = otherCategoryContents.sort(() => Math.random() - 0.5);
+    
+        // Gabungkan konten kategori yang sama dengan konten acak, maksimum 4
+        const finalContents = [
+          ...sameCategoryContents,
+          ...otherCategoryContents.slice(0, 4 - sameCategoryContents.length)
+        ].slice(0, 4); // Pastikan total maksimal 4
+    
+        setContents(finalContents);
+      }
+    
+      setContent(selectedContent);
+    }, [slug]);
 
   if(!content) {
     return <>
@@ -89,9 +113,14 @@ const DetailContent1 = (  ) => {
           
           
         </main>
-        <div>
-          <RecommendedContent />
-          </div>
+        <div className="flex items-center justify-start gap-4 mb-[32px]">
+            <div className="h-[3px] w-[150px] bg-black flex rounded-full" />
+            <h2 className="text-2xl font-semibold  whitespace-nowrap">Rekomendasi Lainnya</h2>
+            <div className="h-[3px] bg-black flex-1 rounded-full" />
+        </div>
+        <div className="justify-between mx-[150px] mb-[32px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6 gap-4 text-[#FFFFF0]">
+          <ContentList contents={contents} />
+        </div>
       </div>
     );
 }
